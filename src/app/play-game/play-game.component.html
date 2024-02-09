@@ -1,0 +1,10 @@
+<div class="flex flex-wrap m-2">
+  <div *ngFor="let card of getCards()" class="border-2 border-white">
+    <div *ngIf="!card.isBack" class="card">
+      <img src="{{ card.url }}" alt="card" class="object-cover card">
+    </div>
+    <div *ngIf="card.isBack" class="bg-cyan-600 object-cover flex hover:cursor-pointer card" (click)="showCard(card)">
+      <p class=" text-white m-auto card-back-char block">M</p>
+    </div>
+  </div>
+</div>

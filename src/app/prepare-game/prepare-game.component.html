@@ -1,0 +1,31 @@
+<div>
+  <input type="file" class="file-input"
+       (change)="onFileSelected($event)" multiple #fileUpload>
+
+  <div class="flex">
+
+      <div class="flex-col flex-initial mx-2 my-auto">
+        <div class="">
+          <span class="text-">Add images</span>
+        </div>
+      </div>
+      <div class="flex-initial">
+        <button mat-mini-fab color="primary" class="upload-btn"
+          (click)="fileUpload.click()">
+            <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+  </div>
+  <div class="flex flex-wrap m-2">
+    <div *ngFor="let image of cardService.images" class="border-2 border-white w-48">
+      <img src="{{ image }}" alt="" class="object-cover h-48 w-96" width="200" height="200">
+    </div>
+  </div>
+  <div class="flex mx-2">
+    <div class="flex-initial">
+      <button *ngIf="existsAnyImage()" mat-raised-button color="primary" (click)="playGame()">
+        play
+      </button>
+    </div>
+  </div>
+</div>
