@@ -15,6 +15,11 @@
             <mat-icon>attach_file</mat-icon>
         </button>
       </div>
+      <div class="flex-initial mx-2">
+        <button *ngIf="existsAnyImage()" mat-raised-button color="primary" (click)="playGame()">
+          play
+        </button>
+      </div>
   </div>
   <div class="flex flex-wrap m-2">
     <div *ngFor="let image of cardService.images" class="border-2 border-white w-48">
